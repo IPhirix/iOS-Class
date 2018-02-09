@@ -1,5 +1,5 @@
-//: Playground - noun: a place where people can play
-
+//: Playground - noun: a place pwhere people can play
+//This is a single line comment
 
 import UIKit
 
