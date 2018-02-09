@@ -148,7 +148,7 @@ if let carArr = cars, carArr.count > 0 {
     //only execute if not nil and if more than 0 elements
 } else {
     cars?.append(Car())
-    print(cars?.count ?? <#default value#>)
+    //print(cars?.count ??)
 }
 
 
