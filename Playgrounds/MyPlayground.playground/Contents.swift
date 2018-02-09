@@ -1,7 +1,10 @@
 //: Playground - noun: a place pwhere people can play
 //This is a single line comment
 
+
 import UIKit
+
+
 
 //Variables are not a constant
 //= is an assignment operator
@@ -26,7 +29,6 @@ var str = "Hello, playground"
 
 //Explicitely declared type, 'String'
 var str2: String = "Hello, playground"
-
 
 
 
