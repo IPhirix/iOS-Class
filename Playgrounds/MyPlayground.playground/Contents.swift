@@ -24,12 +24,83 @@ var cashRegisterMessage = bankAccountBalance >= 50 ? "You just bought the item" 
 
 
 //Strings
-//The below example is of type inferance. the variable 'sty' has a 'string' type data asisgned to it
+//The below example is of type inferance. the variable 'str' has a 'string' type data assigned to it
+//You're not explicitely declaring the type. It's infering what type it is
 var str = "Hello, playground"
 
 
 //Explicitely declared type, 'String'
 var str2: String = "Hello, playground"
+
+var firstName = "Jason"
+var lastName = "Wilson"
+var age = 27
+
+//String concatination
+//Also called string manipulation
+var fullName = firstName + " " + lastName
+
+
+//String interpolation
+//\(variable goes here)
+var fullName2 = "\(firstName) \(lastName) is \(age)"
+
+//appending property
+fullName.append(" III")
+
+//basic properties: capitalized, lowercase, uppercase
+var bookTitle = "This is the end"
+bookTitle = bookTitle.capitalized
+bookTitle = bookTitle.lowercased()
+bookTitle = bookTitle.uppercased()
+
+
+//contains and replace
+var sentence = "What the fuck! Hell that crazy"
+sentence = sentence.lowercased()
+
+if sentence.contains("fuck") || sentence.contains("hell") {
+    sentence.replacingOccurrences(of: "fuck", with: "frick")
+    sentence.replacingOccurrences(of: "hell", with: "heck")
+}
+
+
+//integers, floats, and doubles
+var myAge = 28
+var weight: Int = 240
+
+//swift prefers double over float
+var milesRan = 56.45
+
+var someNum: Double = 23.96
+
+
+//Arithmetic Operators
+//+ = / * ?
+var area = 15 * 20
+var sum = 5 + 6
+var diff = 10 - 3
+var div = 12/3
+var remainder = 12%5
+var randoNum1 = 13
+
+//Determining if the number is even or odd
+if randoNum1 % 2 == 0 {
+    print("This is an even number")
+}
+else {
+    print("This is an odd number")
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
