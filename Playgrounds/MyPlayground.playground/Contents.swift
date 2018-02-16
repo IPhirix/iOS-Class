@@ -334,9 +334,137 @@ if isCandyAmountAcceptable(bandMemberCount: bandMemberCount, candyCount: candyCo
 
 
 
+
+//--------------------- Instances and Types --------------------
+
+//In programming, you can create and use different instances of a given type. Each instance has its own set of property values, and each instance can perform behavior independent of other instances.
+
+//String is a type
+//"hello" is an instance of a String.
+//‘Howdy!’ is an instance of ‘literalSting’ of Type String
+
+let literalString = "Howdy!"
+let literalBool = false
+let literalInt = 84
+
+
+//Date initializer
+let rightNow = Date()
+
+//Date() looks a lot like a function, but with an important difference: It uses a type name instead of a name beginning with a lowercase letter. This is an example of an initializer. You use an initializer to create a new instance of a particular type.
+
+//This is an example of an initializer. You use an initializer to create a new instance of a particular type. Only a few types, like String, Bool, and Int, can be created using literals, but every type has at least one initializer.
+
+//Even types you’ve been creating using literals have initializers:
+//Initializers can have parameters that you pass through it
+
+//String initializer
+let emptyString = String()
+
+//Boolean initializer
+let falseBool = Bool()
+
+//Int initializer
+let zero = Int()
+
+
+//Initializers and functions are similar in some ways:
+
+//They can have parameters or no parameters at all.
+
+//You call them the same way, by passing in required argument values.
+
+//But they also have differences:
+
+//You use the name of the type when calling an initializer
+
+//An initializer returns a new instance of its type
+
+
+
+
+//--------------------- Methods --------------------
+
+//Functions can be defined as part of a type. These functions are called instance methods, or just methods. String has many instance methods, which are used for common operations.
+
+//Instance methods are called by using a period (.) after the instance, followed by the method call:
+
+
+let introduction = "It was a dark and stormy night"
+
+introduction.hasPrefix("It was")
+introduction.hasPrefix("It wasn't")
+
+
+//This is known as calling a method on the instance. You’ve called hasPrefix() on introduction.
+//hasPrefix is a String instance method, so you can’t use it without an instance.
+
+//You also can’t use an instance method on an instance of the wrong type. You can only use methods that are part of, or members of, a particular type.
+
+
+
+
+//--------------------- Properties --------------------
+
+//Each instance has one or more pieces of associated information. These values are known as properties.
+
+//The property is declared like this:
+//var isEmpty: Bool{ get }
+
+
+//The property is named isEmpty and is of type Bool. It is marked var because the property value could change if the string contents change.
+
+//The { get } indicates you can only get the value of this property, but you can’t set it. This is also called a read-only property.
+
+//Properties are called by using a period (.) after the instance, followed by the property name:
+
+
+let something = "It was the best of times"
+something.isEmpty
+
+
+let nothing = ""
+nothing.isEmpty
+
+//You can’t use a property without an instance.
+//You can only use properties that are part of the type of the instance.
+
+
+
+
+
+//--------------------- Properties vs. Methods --------------------
+
+//A variable is useful for referring to a value that you can access when required. Similarly, a property provides a way for getting or setting values from an instance. Each instance can have a different value for that property.
+
+//A function is useful for providing behavior that can be repeated as needed. A method works in the same way, providing behavior specific to that instance.
+
+//If the work has side effects, things that happen that aren't related to the return value, then it’s a method.
+
+
+
+
+
 //--------------------- APIs --------------------
+
 //An API is a specific set of functionality that can be used by a software developer to accomplish a task.
 //When you develop an algorithm, you’re defining a series of steps to be performed. Any self-contained step-by-step series of operations is an algorithm.
+
+//The instance methods and properties of a String are the API of the String type.
+
+var example = "It was the best of times"
+
+// Practice here by typing . after "example":
+example.hasSuffix("times")
+example.hasPrefix("It was")
+
+example.isEmpty
+example
+example.removeAll()
+example
+
+
+
 
 
 
