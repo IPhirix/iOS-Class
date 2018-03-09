@@ -469,12 +469,194 @@ example
 
 
 
+//--------------------- Arrays --------------------
 
-//Array
-var salaries = [45000.0, 50000.0, 55000.0, 60000.0]
-4
+//Array literal 'let'
+//Arrays can house any kind of type
+//Since this array is defined using let, both the items and the order of the items will never change
+let devices = ["iPhone", "iPad", "iPod", "iMac"]
+devices[0]
+let favoriteDevice = devices[0]
 
-//while loop
+//This array is a collection of chores instances
+let chores = ["Vacumming","Dusting","Laundry","Feed the Dragon"]
+let minutesPerChore = 10
+let numberOfChores = chores.count
+
+let choresTime = numberOfChores * minutesPerChore
+
+
+//Using an array with a func
+let friends = ["name1","name2","name3","name4"]
+
+func inviteFriends(_ friend: String){
+    print("Hey, \(friend), please come to my party on Friday!")
+}
+
+inviteFriends(friends[0])
+inviteFriends(friends[1])
+inviteFriends(friends[2])
+
+
+//To run items in an array you can use a For-In loop
+//It runs in order from index 0 - until the end of the array
+for friend in friends {
+    print("Hey, \(friend), please come to my party on Friday!")
+}
+print("Done! All your friends are invited.")
+
+//The first line sets up the loop with two important pieces of information:
+//1. 'In' which collection to work through (in this case, friends).
+//2. What to call the item being worked with (in this case, friend). You could say in English, “For every friend in the friends collection...”
+
+
+//var arrays (mutable arrays) can be changed whenever, but the type can't change
+var transitOptions = ["walk", "bus", "bike", "drive"]
+transitOptions = ["rowboat", "paddle board", "submarine"]
+
+//To create a mutable empty array that will hold strings, do this:
+//a type followed by parentheses is how you create an instance of that type
+var list = [String]()
+
+//Three ways to add to an mutable array
+//append adds the item to the end of the array
+//insert just addes the item and doesn't overwrite
+//+= just adds the items to the end of the array
+list.append("Banana")
+list.insert("Apple", at: 1)
+list += ["Cherry", "Grapes","Watermelon"]
+
+
+//Removing items from an array
+var numbers = [0,1,2,3,4]
+
+//The 'remove' method returns the number that you removed
+let someNumbers = numbers.remove(at: 2)
+numbers
+
+//RemoveFirst method removes and returns the frist number in the array 'at index 0'
+let firstNumber = numbers.removeFirst()
+numbers
+
+//RemoveLast method removes and returns the last number in the array
+let lastNumber = numbers.removeLast()
+numbers
+
+//Chaning one index
+//the [] is called a subscript
+numbers[0] = 99
+numbers
+
+//Remove all items from an array
+numbers.removeAll()
+numbers
+
+let shouldMascotChangeVotes: [Bool] = [false, false, false, true, false, true, true, true, false, true, true, true, true, false, true, true, false, true, true, true, false, true, true, true, true, true, true, true, false, true, false, true, false, true, true, false, false, true, true, false, false, true, true, true, false, true, false, true, true, false, true, true, false, true, false, false, true, false, true, true, false, false, true, false, true, true, true, false, true, true, false, false, true, false, true, true, false, false, false, true, false, true, true, false, true, true, true, true, true, true, true, false, true, false, true, false, true, true, true, true, true, true, true, false, true, true, false, true, true, true, true, true, true, true, false, true, true, false, true, true, false, true, true, true, true, true, false, false, false, false, true, true, true, false, true, true, false, false, true, false, false, true, true, true, true, false, true, true, true, true, false, true, true, false, true, false, false, true, true, false, true, false, false, false, true, false, false, false, true, false, true, true, false, true, true, false, true, true, true, false, false, false, true, false, true, false, true, true, true, true, false, true, false, false, true, true, true, true, true, false]
+
+var yesVotes = 0
+var noVotes = 0
+
+// Add your vote-processing function here:
+func voteFunc (forIssue: String, withVotes: [Bool]){
+    for vote in shouldMascotChangeVotes{
+        if vote == true {
+            yesVotes += 1
+        }
+        else {
+            noVotes += 1
+        }
+    }
+    print("Here's the toal for: \(forIssue) - Yes: \(yesVotes) and No: \(noVotes)")
+}
+
+voteFunc(forIssue: "Should we change the mascot?", withVotes: shouldMascotChangeVotes)
+
+
+
+
+//--------------------- Structures --------------------
+
+//In general, the types of data that an app deals with are known collectively as its model, or sometimes more verbosely, its data model.
+//One way to create a new type in Swift is to define a structure, often called a struct.  A struct is a simple way of grouping values of other types together.
+
+
+//A 'song' struct. It's a new type called 'Song' with three properties: title, artist, duration (All constants (let) and with type annotation)
+//structs should start with a Capitalized letter. Property names should be lowercase
+//To make the 'Song' struct mutable, you can make the properiteis var instead of let
+struct Song {
+    let title: String
+    let artist: String
+    let duration: Int
+    var rating: Int
+}
+
+var song1 = Song(title: "No, no, no", artist: "Fizz", duration: 150, rating: 0)
+
+//Need to specify every property that you declar in a struct when you create an instance of it, or an error will be thrown (remove rating)
+//To make the instance song1 of Type Song mutable, you can make it var instead of let. That way, you can change the properities that it has assigned to it
+//Remember from the Instances lesson that every type has at least one initializer. When you declare a struct, an initializer is automatically created for you. Because this initializer has a parameter for each member property in the struct, it is called a memberwise initializer.
+//In the example above, song1 is an instance of Song, and Song is the type. Each property can be accessed like this:
+
+song1.title
+song1.artist
+song1.duration
+song1.rating
+song1.rating = 4
+
+
+//A struct with a 'Calculated Property'
+//A calculated property is declared as a var, since it could change depending on the rest of the struct
+//The calculation of 'formattedDuration' has to return with Type 'String' since the 'Type Annotation' was set to String
+//Within the code of a struct, you can access its own properties directly by their names, without using the dot. (e.g. duration in formattedDuration)
+struct Movie {
+    let title: String
+    let director: String
+    let duration: Int
+    
+    var formattedDuration: String {
+        let hours = duration / 60
+        let minutes = duration % 60
+        return "\(hours)h \(minutes)m"
+    }
+}
+
+let movie1 = Movie(title: "Hot Rod", director: "Jason Wilson", duration: 164)
+movie1.formattedDuration
+
+
+//Creating a function that uses the struct and it's properties
+//Creating a function inside a struct
+struct Rectangle {
+    let width: Int
+    let height: Int
+    
+    func biggerThan(_ rectangle: Rectangle) -> Bool {
+        let areaOne = width * height
+        let areaTwo = rectangle.height * rectangle.width
+        return areaOne > areaTwo
+    }
+}
+
+let rectangle1 = Rectangle(width: 10, height: 10)
+let rectangle2 = Rectangle(width: 10, height: 30)
+
+rectangle1.biggerThan(rectangle2)
+rectangle2.biggerThan(rectangle1)
+
+
+
+
+
+
+
+
+//--------------------- Loops --------------------
+
+
+
+
+
+var salaries = [30000.0, 40000.0, 50000.0, 60000.0]
 var index = 0
 repeat {
     salaries[index] = salaries[index] + (salaries[index] * 0.10)
