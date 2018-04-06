@@ -646,15 +646,40 @@ rectangle2.biggerThan(rectangle1)
 
 
 
+//--------------------- QuestionBot 2 --------------------
+
+//in iOS Apps, a scrolling list of items is known as a table view.
+//Each item in the list is called a cell
+
+
+
+
+//--------------------- Actions and Outlets --------------------
+
+//There are two kinds of connections between storyboards and code:
+//Outlets connect variables in your code to objects in the storyboard, so you can access those objects within your code and get information or make changes when the app is running.
+//Actions connect controls like switches and buttons to methods in your code, so tapping a button, for example, will run a particular method.
+
+//Circles: The filled circle indicates that the outlet is connected. If the outlet wasn’t connected, it would be an empty circle.
+
+//@IBOutlet weak: This signals to Xcode that the property on this line is an outlet.
+
+//var colorView: This is the declaration of a property you’re already familiar with.
+
+//UIView!: The type of the property is UIView!. The exclamation point means that if the outlet is not connected and you try to access this property, your app will crash. UIView is the basic view type used in all iOS apps. Almost everything you see on the screen is a kind of UIView, which ​ is responsible for drawing and handling touches.
+
+
+//--------------------- Adaptive User Interfaces --------------------
+
+// A user interface that can adjust to different screens orientations is called an adaptive user interface.
+// The size and location of every view in Interface Builder is defined as a recetangle, known as its frame. This is similar to plotting points on a coordinate system.
+//With Auto Layout, you set up rules, called constraints, that define how views will be laid out.
+
 
 
 
 
 //--------------------- Loops --------------------
-
-
-
-
 
 var salaries = [30000.0, 40000.0, 50000.0, 60000.0]
 var index = 0
